@@ -1,24 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Modul_2_Practice_1.Entities
+﻿namespace Modul_2_Practice_1.Entities
 {
-    public enum CurrencyType
+    public class Currency
     {
-        /// <summary>
-        /// Ukrainian currency name.
-        /// </summary>
-        Hryvnias,
+        public string CurrencyName { get; set; }
 
-        /// <summary>
-        /// USA currency name.
-        /// </summary>
-        Dollar,
+        public decimal Rate { get; set; }
 
-        /// <summary>
-        /// European Union currency name.
-        /// </summary>
-        Euro
+        public bool MainCurrency { get; set; }
     }
 }
