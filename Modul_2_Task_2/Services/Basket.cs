@@ -5,31 +5,19 @@ using Modul_2_Practice_1.Entities;
 
 namespace Modul_2_Practice_1.Services
 {
-    class Basket
+    public class Basket
     {
-        private readonly static Basket _instance;
-        private readonly Order _order; 
-        private Basket()
-        {
-            _order = new Order();
-        }
+        private static readonly Basket _instance;
+        private readonly Order _order;
+
         static Basket()
         {
             _instance = new Basket();
         }
 
-        public void AddProduct(Product product, int count)
+        private Basket()
         {
-            var orderDetails = new OrderDetails() { Product = product, ProductCount = count };
-            _order.OrderDetails.Add(orderDetails);
-        }
-        public List<Product> GetProductsBasket()
-        {
-            return _products;
-        }
-        public void BasketClear()
-        {
-            _products.Clear();
+            _order = new Order();
         }
 
         public static Basket GetInstance
@@ -40,5 +28,20 @@ namespace Modul_2_Practice_1.Services
             }
         }
 
+        public void AddProduct(Product product, int count)
+        {
+            var orderDetails = new OrderDetail() { Product = product, ProductCount = count };
+            _order.OrderDetails.Add(orderDetails);
+        }
+
+        public Order GetOrder()
+        {
+            return _order;
+        }
+
+        public void BasketClear()
+        {
+            _order.OrderDetails.Clear();
+        }
     }
 }

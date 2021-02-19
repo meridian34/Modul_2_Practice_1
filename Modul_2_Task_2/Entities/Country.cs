@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Modul_2_Practice_1.Entities
 {
-    public enum CurrencyType
+    public enum Country
     {
         /// <summary>
-        /// Ukrainian currency name.
+        /// Country Ukraine
         /// </summary>
-        Hryvnias,
+        Ukraine,
 
         /// <summary>
-        /// USA currency name.
+        /// Country USA
         /// </summary>
-        Dollar,
+        USA,
 
         /// <summary>
-        /// European Union currency name.
+        /// Country Germany
         /// </summary>
-        Euro
+        Germany
     }
 }
